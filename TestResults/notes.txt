@@ -14,6 +14,7 @@ Performance notes:
 Indexing with 5 shards is very fast. Transaction generator running on one of the servers is only limited by IO.
 Status requests while filling database usually takes <800ms.
 
+
 --------------------------
 Solr
 
