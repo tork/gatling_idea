@@ -6,6 +6,11 @@ import bootstrap._
 
 class ElasticPUTBenchmark extends Simulation {
 
+//  val headers_1 = Map(
+//    "Accept" -> "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+//    "Accept-Charset" -> "ISO-8859-1,utf-8;q=0.7,*;q=0.7",
+//  )
+
    val httpConf = httpConfig
      .baseURL("http://bigdata01.dev.bekk.no:9200")
      .acceptCharsetHeader("ISO-8859-1,utf-8;q=0.7,*;q=0.7")
@@ -15,14 +20,17 @@ class ElasticPUTBenchmark extends Simulation {
      .userAgentHeader("Mozilla/5.0 (Macintosh; Intel Mac OS X 10.6; rv:8.0.1) Gecko/20100101 Firefox/8.0.1")
 
    val scn = scenario("ElasticSearch PUT benchmarking")
-     .repeat(1) {
-       println("test");
+     .repeat(5) {
        exec(
          http("req0")
-           .get("/gatling/ratatata/ta0")
+           //.put("/gatling/ratatata/ta0")
+           //.get("/sb1/transer/t0")
+           .get("status")
+//           .headers(headers_1)
            .check(status.is(200)))
            .pause(0 milliseconds, 100 milliseconds)
    }
+  setUp(scn.users(1).protocolConfig(httpConf))
  }
 
 
