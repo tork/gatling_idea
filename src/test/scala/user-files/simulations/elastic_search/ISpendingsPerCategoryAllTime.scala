@@ -30,7 +30,7 @@ class ISpendingsPerCategoryAllTime extends Simulation {
       )
     )
 
-    /* I am slow. Uncomment for speed comparison!
+    /* I am slow: Uncomment for speed comparison!
       exec(
       http("req1")
         .post(req)
