@@ -1,7 +1,12 @@
 import com.excilys.ebi.gatling.http.Predef._
 
 object Config {
-  val host = "http://bigdata05.dev.bekk.no:9200"
+//  val host = "http://bigdata05.dev.bekk.no:9200"
+  val hostname = "el1"
+  val accts = "el1_accts.csv"
+  val acctsMulti = "el1_acctsMulti.csv"
+  val tokens = "tokens.csv"
+  val host = "http://"+hostname+":9200"
   val httpConf = httpConfig
     .baseURL(host)
     .acceptCharsetHeader("ISO-8859-1,utf-8;q=0.7,*;q=0.7")

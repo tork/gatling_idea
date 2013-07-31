@@ -10,7 +10,7 @@ class ISpendingsPerCategoryAllTime extends Simulation {
   val scn = scenario("ElasticSearch Benchmark 0")
     .feed(acctFeeder)
     .repeat(1) {
-    val req = "/sb1/transer/_search"
+    val req = "/_search"
 
     exec(
       http("req0")

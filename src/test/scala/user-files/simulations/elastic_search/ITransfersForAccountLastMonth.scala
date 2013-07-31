@@ -11,7 +11,7 @@ class ITransfersForAccountLastMonth extends Simulation {
   val scn = scenario("ElasticSearch Benchmark 0")
     .feed(acctFeeder)
     .repeat(1) {
-    val req = "/sb1/transer/_search"
+    val req = "/_search"
 
     exec(
       http("req0")
@@ -33,5 +33,5 @@ class ITransfersForAccountLastMonth extends Simulation {
       )
     )
   }
-  setUp(scn.users(1).ramp(2).protocolConfig(Config.httpConf))
+  setUp(scn.users(10).ramp(5).protocolConfig(Config.httpConf))
 }
